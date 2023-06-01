@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import React, { useState } from "react";
+import CardComponent from "@/components/Card/card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,9 +42,11 @@ export default function Home() {
           <ul>
             {tasks.map((task) => (
               <li key={task.id}>
-                <strong>{task.title}</strong>
-                <p>{task.dueDate}</p>
-                <p>{task.status}</p>
+                <CardComponent
+                  title={task.title}
+                  dueDate={task.dueDate}
+                  status={task.status}
+                />
               </li>
             ))}
           </ul>
